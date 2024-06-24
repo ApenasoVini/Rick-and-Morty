@@ -13,7 +13,7 @@ const CharacterSearch = () => {
         try {
             const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${name}`);
             if (!response.ok) {
-                throw new Error('Nenhum personagem encontrado');
+                throw new Error('');
             }
             const data = await response.json();
             setCharacters(data.results || []);
