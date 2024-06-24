@@ -24,8 +24,13 @@ body {
     font-style: normal;
     width: 100%;
     min-height: 100vh;
-    background-image: url(./img/wallpaper.jpeg);
+    background-image: url(./img/wallpaperOne.jpeg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+
+
+    @media screen and (max-width: 400px) {
+        background-image: url(./img/wallpaperTwo.jpeg);
+    }
 }

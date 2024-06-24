@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding: 1%;
+    padding: 2%;
     width: 100%;
     text-align: center;
 
@@ -13,9 +13,15 @@
         font-size: 1rem;
         border: 4px solid;
         border-image: linear-gradient(to right, var(--ColorOne), var(--ColorTwo)) 1;
-        width: 25vw;
+        width: 20rem;
+        height: 3rem;
         align-self: center;
         outline: none;
+
+        @media screen and (max-width: 400px) {
+            width: 20rem;
+            min-height: 3rem;   
+        }
     }
     
     .Spinner {
@@ -24,7 +30,6 @@
         border: 5px solid transparent;
         align-self: center;
         border-image: linear-gradient(45deg, var(--ColorOne), var(--ColorTwo)) 1;
-        border-radius: 100%;
         margin-top: 1rem;
         animation: spin 1s linear infinite;
 
@@ -42,3 +47,4 @@
         margin-top: 1rem;
     }
 }
+
