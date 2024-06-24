@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
-:root {
-    $ColorOne: #160440;
-    $ColorTwo: #08C952;
-    $Black: #F0F7F4;
-    $White: #252729;
-}
+$ColorOne: #160440;
+$ColorTwo: #08C952;
+$Black: #F0F7F4;
+$White: #252729;
 
+:root {
+    --ColorOne: #{$ColorOne};
+    --ColorTwo: #{$ColorTwo};
+    --Black: #{$Black};
+    --White: #{$White};
+}
 
 * {
     margin: 0;
@@ -20,4 +24,7 @@ body {
     font-style: normal;
     width: 100%;
     min-height: 100vh;
+    background-image: url(./img/wallpaper.jpeg);
+    background-position: center;
+    background-size: cover;
 }
