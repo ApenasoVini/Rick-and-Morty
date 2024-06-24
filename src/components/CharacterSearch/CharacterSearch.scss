@@ -3,27 +3,29 @@
 .CharacterSearch {
     display: flex;
     flex-direction: column;
-    align-items: center;
     height: 100vh;
     padding: 1%;
     width: 100%;
+    text-align: center;
 
     input {
         padding: 1%;
         font-size: 1rem;
-        border: 2px solid;
+        border: 4px solid;
         border-image: linear-gradient(to right, var(--ColorOne), var(--ColorTwo)) 1;
         width: 25vw;
+        align-self: center;
         outline: none;
     }
     
     .Spinner {
-        width: 50px;
-        height: 50px;
+        width: 3rem;
+        height: 3rem;
         border: 5px solid transparent;
-        border-top: 5px solid;
+        align-self: center;
         border-image: linear-gradient(45deg, var(--ColorOne), var(--ColorTwo)) 1;
-        border-radius: 50%;
+        border-radius: 100%;
+        margin-top: 1rem;
         animation: spin 1s linear infinite;
 
         @keyframes spin {
@@ -31,6 +33,12 @@
                 transform: rotate(360deg);
             }
         }
+    }
 
+    p {
+        color: var(--White);
+        text-transform: uppercase;
+        font-size: 1rem;
+        margin-top: 1rem;
     }
 }

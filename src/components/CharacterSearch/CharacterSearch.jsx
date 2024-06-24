@@ -6,16 +6,21 @@ const CharacterSearch = () => {
     const [name, setName] = useState('');
     const [characters, setCharacters] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(false);
 
     const fetchCharacters = async (name) => {
         setLoading(true);
         try {
             const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${name}`);
-            if (!response.ok) throw new Error('Network response was not ok');
+            if (!response.ok) {
+                throw new Error('Nenhum personagem encontrado');
+            }
             const data = await response.json();
             setCharacters(data.results || []);
+            setError(false);
         } catch (err) {
             setCharacters([]);
+            setError(true); 
         } finally {
             setLoading(false);
         }
@@ -24,8 +29,12 @@ const CharacterSearch = () => {
     const handleChange = (event) => {
         const inputValue = event.target.value.trim();
         setName(inputValue);
-        if (inputValue) fetchCharacters(inputValue);
-        else setCharacters([]);
+        if (inputValue) {
+            fetchCharacters(inputValue);
+        } else {
+            setCharacters([]);
+            setError(false); 
+        }
     };
 
     return (
@@ -36,10 +45,14 @@ const CharacterSearch = () => {
                 value={name}
                 onChange={handleChange}
             />
-            {loading ? (
-                <div className='Spinner'></div>
+            {error ? (
+                <p>Nenhum personagem encontrado</p>
             ) : (
-                <CharacterList characters={characters} />
+                loading ? (
+                    <div className='Spinner'></div>
+                ) : (
+                    <CharacterList characters={characters} />
+                )
             )}
         </div>
     );

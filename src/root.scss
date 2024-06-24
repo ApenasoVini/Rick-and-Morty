@@ -2,8 +2,8 @@
 
 $ColorOne: #160440;
 $ColorTwo: #08C952;
-$Black: #F0F7F4;
-$White: #252729;
+$Black: #252729;
+$White: #F2F2F2;
 
 :root {
     --ColorOne: #{$ColorOne};
@@ -27,4 +27,5 @@ body {
     background-image: url(./img/wallpaper.jpeg);
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
 }

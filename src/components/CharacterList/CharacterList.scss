@@ -1,0 +1,35 @@
+@import '../../root.scss';
+
+.CharacterList {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    div {
+        width: 18rem;
+        height: 18rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 0.25rem;
+
+        h3 {
+            color: var(--White);
+            text-transform: uppercase;
+            font-size: 1rem;
+        }
+
+        img {
+            width: 15rem;
+            height: 15rem;
+        }
+
+    }
+}
